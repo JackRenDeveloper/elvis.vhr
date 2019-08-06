@@ -12,12 +12,12 @@ import org.springframework.cache.annotation.EnableCaching;
 @EnableCaching
 public class HrserverApplication extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HrserverApplication.class, args);
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(HrserverApplication.class);
 	}
 
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(HrserverApplication.class);
+	public static void main(String[] args) {
+		SpringApplication.run(HrserverApplication.class, args);
 	}
 }
